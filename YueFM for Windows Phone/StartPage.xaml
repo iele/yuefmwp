@@ -1,0 +1,36 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="YueFM.Pages.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+ FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Canvas HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="480" Height="800">
+        <Canvas.Resources>
+            <Storyboard x:Name="ImageStoryboard" Completed="ImageStoryboard_Completed">
+                <DoubleAnimation Storyboard.TargetName="TranslateTransform" Storyboard.TargetProperty="X" From="0" To="-480" BeginTime="0:0:0.25" Duration="0:0:0.5" >
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut" />
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+
+            <TranslateTransform x:Name="TranslateTransform" />
+        </Canvas.Resources>
+
+        <StackPanel x:Name="content">
+            <Image x:Name="image" Height="800" Source="/SplashScreenImage.jpg" Stretch="Fill" Width="480" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="8"/>
+            <ProgressBar Width="480" Canvas.Top="420" IsIndeterminate="True" Foreground="{StaticResource PhoneAccentBrush}" Background="#00000000" Canvas.ZIndex="10"/>
+        </StackPanel>
+    </Canvas>
+
+ </phone:PhoneApplicationPage>

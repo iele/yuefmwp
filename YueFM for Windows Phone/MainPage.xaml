@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="YueFM.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:live="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" d:DesignHeight="800"  d:DesignWidth="480" xmlns:my="clr-namespace:YueFM.Controls">
+    <Canvas x:Name="LayoutRoot" Width="480" Height="800" Margin="0, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Canvas.Resources>
+            <Storyboard x:Name="ArticleInStoryboard" Completed="ArticleInStoryboard_Completed">
+                <DoubleAnimation Storyboard.TargetName="ArticleTranslateTransform" Storyboard.TargetProperty="X" From="480" To="0" Duration="0:0:0.5" >
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseIn" />
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+                <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="Opacity" From="0.25" To="1" Duration="0:0:0.45" />
+            </Storyboard>
+            <Storyboard x:Name="ArticleOutStoryboard" Completed="ArticleOutStoryboard_Completed">
+                <DoubleAnimation Storyboard.TargetName="ArticleTranslateTransform" Storyboard.TargetProperty="X" From="0" To="-480" Duration="0:0:0.5" >
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseIn" />
+                </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+
+            <Storyboard x:Name="ArticleRestoreStoryboard" Completed="ArticleRestoreStoryboard_Completed" >
+            </Storyboard>
+
+            <TransformGroup x:Name="ArticleTransforms">
+                <ScaleTransform x:Name="ArticleScaleTransform" CenterX="240" CenterY="400" />
+                <TranslateTransform x:Name="ArticleTranslateTransform" />
+            </TransformGroup>
+        </Canvas.Resources>
+
+        <ProgressBar x:Name="progressBar" Height="10" Width="480" IsIndeterminate="True"/>
+
+        <StackPanel x:Name="ContentPanel" Margin="0,0,0,0" Orientation="Horizontal" Canvas.ZIndex="-6">
+            <live:SignInButton x:Name="ButtonSignin" Content="SignInButton" Visibility="Collapsed"
+                                               ClientId="00000000400F5A12" Scopes="wl.signin wl.offline_access wl.basic wl.skydrive_update " 
+                                               Branding="Skydrive" TextType="Custom" 
+                                               SessionChanged="ButtonSignin_SessionChanged" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            <ScrollViewer x:Name="scroll" Width="480" Margin="0" Canvas.ZIndex="-5" Height="780" VerticalScrollBarVisibility="Auto" >
+                <StackPanel x:Name="content" VerticalAlignment="Top" Width="480" Margin="0" ManipulationStarted="GestureListener_DragStarted" Tap="GestureListener_Tap">
+                </StackPanel>
+                </ScrollViewer>
+        </StackPanel>
+        <Popup x:Name="popup" Canvas.ZIndex="10" Margin="408,575,0,0" VerticalAlignment="Bottom" IsOpen="True" HorizontalAlignment="Right" Width="72" Height="144">
+        	<my:FloatControl x:Name="floatPopup" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Popup>
+    </Canvas>
+
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+</phone:PhoneApplicationPage>

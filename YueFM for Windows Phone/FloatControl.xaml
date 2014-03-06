@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="YueFM.Controls.FloatControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    d:DesignHeight="480" d:DesignWidth="480" Width="72" Height="144" Opacity="0.85">
+    <UserControl.Resources>
+        <Storyboard x:Name="FloatInStoryboard" Completed="FloatInStoryboard_Completed">
+            <DoubleAnimation Storyboard.TargetName="TranslateTransform" Storyboard.TargetProperty="X" From="72" To="0" Duration="0:0:0.5" >
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseIn" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>          
+        </Storyboard>
+        <Storyboard x:Name="FloatOutStoryboard" Completed="FloatOutStoryboard_Completed">
+            <DoubleAnimation Storyboard.TargetName="TranslateTransform" Storyboard.TargetProperty="X" From="0" To="72" Duration="0:0:0.5" >
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <TranslateTransform x:Name="TranslateTransform"/>
+    </UserControl.Resources>
+    <StackPanel x:Name="LayoutRoot" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Opacity="0.85">
+		<StackPanel.Background>
+			<SolidColorBrush Color="#994B4B4B"/>
+		</StackPanel.Background>
+        <Image x:Name="nextImage" Margin="0" Source="/Images/appbar.next.rest.png" Width="72" Height="72" Tap="nextImage_Tap" Stretch="None"/>
+        <Image x:Name="favImage" Height="72" Margin="0" Source="/Images/appbar.favs.addto.rest.png" Width="72" Tap="favImage_Tap" Stretch="None"/>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="YueFM.Controls.LikeItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+    xmlns:local="clr-namespace:YueFM.Controls">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="SelectedStoryBoard" Completed="SelectedStoryBoard_Completed">
+            <DoubleAnimation Storyboard.TargetName="StackPanelTranslateTransform" Storyboard.TargetProperty="X" From="0" To="480" Duration="0:0:0.35" />
+            <DoubleAnimation Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity" From="1" To="0.5" Duration="0:0:0.35" />
+        </Storyboard>
+        <TransformGroup x:Name="StackPanelTransformGroup">
+            <ScaleTransform x:Name="StackPanelScaleTransform"/>
+            <TranslateTransform x:Name="StackPanelTranslateTransform"/>
+        </TransformGroup>
+
+        <TransformGroup x:Name="imageTransformGroup">
+            <TranslateTransform x:Name="imageTranslateTransform"/>
+        </TransformGroup>
+
+        <TransformGroup x:Name="textTransformGroup">
+            <TranslateTransform x:Name="textTranslateTransform"/>
+        </TransformGroup>
+
+    </UserControl.Resources>
+
+    <StackPanel x:Name="LayoutRoot" Orientation="Horizontal" Width="468" 
+                ManipulationStarted="StackPanel_ManipulationStarted" 
+                                ManipulationDelta="StackPanel_ManipulationDelta"                    
+                                ManipulationCompleted="StackPanel_ManipulationCompleted" 
+                                VerticalAlignment="Top" Margin="0" >
+        <TextBlock x:Name="text" Text="{Binding article_title}" FontSize="24" Margin="8,18,0,18" Height="34" />     
+        <Image x:Name="image" Source="/Images/ListBackground.png" IsHitTestVisible="True" Stretch="None" Margin="8,18,0,18" Height="34" />
+    </StackPanel>
+</UserControl>
