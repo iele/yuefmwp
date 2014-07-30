@@ -196,7 +196,7 @@ namespace YueFM.Utils
                         if (settingManager.article_is_image)
                         {
                             Image image = new Image();
-                            image.Margin = new Thickness(6, 12, 6, 12);
+                            image.Margin = new Thickness(6, 0, 6, 12);
                             image.Source = new BitmapImage(new Uri(node.Attributes["src"].Value));
                             image.MaxWidth = 456;
                             view.Add(image);
@@ -366,7 +366,7 @@ namespace YueFM.Utils
                         {
                             Image image = new Image();
                             image.Source = new BitmapImage(new Uri(node.Attributes["src"].Value));
-                            image.Margin = new Thickness(6, 12, 6, 24);
+                            image.Margin = new Thickness(6, 0, 6, 12);
                             image.MaxWidth = 456;
                             view.Add(image);
                         }

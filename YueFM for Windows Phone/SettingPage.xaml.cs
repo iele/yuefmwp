@@ -177,6 +177,12 @@ namespace YueFM.Pages
 
             base.OnNavigatedTo(e);
         }
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            settingManager.SaveSettings();
+
+            base.OnNavigatedFrom(e);
+        }
 
         private void ImageToggleSwitch_Unchecked(object sender, RoutedEventArgs e)
         {

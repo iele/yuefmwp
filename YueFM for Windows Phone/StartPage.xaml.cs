@@ -30,11 +30,17 @@ namespace YueFM.Pages
                 image.Height = 853;
             }
 
+            this.Loaded += StartPage_Loaded;
+         
+        }
+
+        void StartPage_Loaded(object sender, RoutedEventArgs e)
+        {
             APIManager.GetInstance().RestoreLoginState(new Action<Boolean>((b) => Dispatcher.BeginInvoke(() => { })));
             settingManager.RestoreSettings();
 
             this.content.RenderTransform = TranslateTransform;
-            
+
             apiManager.RandomArticleHandler += apiManager_RandomArticleHandler;
             apiManager.GetRandomArticle();
         }

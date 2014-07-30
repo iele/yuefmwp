@@ -25,6 +25,7 @@ namespace YueFM.Managers
             {
                 settings["readed_article"] = value;
                 _readedArticle = value;
+                settings.Save();
             }
         }
 
@@ -36,6 +37,7 @@ namespace YueFM.Managers
             {
                 settings["cached_article"] = value;
                 _cacheArticle = value;
+                settings.Save();
             }
         }
 
@@ -181,6 +183,7 @@ namespace YueFM.Managers
                 }
 
                 this.currentArticle = article;
+                cacheArticle.Add(article);
                 RandomArticleHandler(this.currentArticle);
 
                 CheckReadedList(article);
@@ -230,6 +233,7 @@ namespace YueFM.Managers
                     return;
                 }
                 this.currentArticle = article;
+                cacheArticle.Add(article);
                 NextArticleHandler(this.currentArticle);
 
                 CheckReadedList(article);
@@ -396,6 +400,7 @@ namespace YueFM.Managers
 
                 settings["username"] = this.username;
                 settings["password"] = this.password;
+                settings.Save();
 
                 PostSessionHandler(true);
             }

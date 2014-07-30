@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Phone
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YueFM for Windows Phone 8", "YueFM for Windows Phone\YueFM for Windows Phone 8.csproj", "{A01F8325-C925-4E05-AA28-81EBBEF17ED6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexis.WindowsPhone.Social", "Alexis.WindowsPhone.Social\Alexis.WindowsPhone.Social.csproj", "{42DA7406-3EAC-42A3-B13A-EDBBE318BAC5}"

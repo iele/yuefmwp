@@ -33,3 +33,12 @@ C:\Users\Elephas\SkyDrive\YueFM for Windows Phone 8\Alexis.WindowsPhone.Social\o
 C:\Users\Elephas\SkyDrive\YueFM for Windows Phone 8\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.csproj.GenerateResource.Cache
 C:\Users\Elephas\SkyDrive\YueFM for Windows Phone 8\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.dll
 C:\Users\Elephas\SkyDrive\YueFM for Windows Phone 8\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.pdb
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\Bin\Debug\Alexis.WindowsPhone.Social.dll
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\Bin\Debug\Alexis.WindowsPhone.Social.pdb
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Controls\AccountControl.g.cs
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Controls\AuthControl.g.cs
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.g.resources
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.Resources.LangResource.resources
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.csproj.GenerateResource.Cache
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.dll
+C:\Users\Elephas\Documents\GitHub\yuefmwp\Alexis.WindowsPhone.Social\obj\Debug\Alexis.WindowsPhone.Social.pdb

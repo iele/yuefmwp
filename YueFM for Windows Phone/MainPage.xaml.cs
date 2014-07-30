@@ -80,7 +80,8 @@ namespace YueFM.Pages
             //});
             this.popup.IsOpen = false;
 
-            GetArticleHandler(apiManager.currentArticle);
+            if (this.apiManager.currentArticle != null)
+                GetArticleHandler(apiManager.currentArticle);
 
         }
 
@@ -614,7 +615,7 @@ namespace YueFM.Pages
             //this.titleControl.TitleOutAnimation();
 
             if (this.popup.IsOpen == true)
-                this.floatPopup.FloatOutStoryboard.Begin();       
+                this.floatPopup.FloatOutStoryboard.Begin();
 
             DisableAppBar();
 
@@ -659,9 +660,9 @@ namespace YueFM.Pages
                     //this.titleControl.image.Visibility = Visibility.Visible;
 
                     //if (apiManager.currentArticle.is_liked)
-                        //this.titleControl.image.SetValue(Image.SourceProperty, new BitmapImage(new Uri("/Images/BookmarkLiked.png", UriKind.Relative)));
+                    //this.titleControl.image.SetValue(Image.SourceProperty, new BitmapImage(new Uri("/Images/BookmarkLiked.png", UriKind.Relative)));
                     //else
-                        //this.titleControl.image.SetValue(Image.SourceProperty, new BitmapImage(new Uri("/Images/Bookmark.png", UriKind.Relative)));
+                    //this.titleControl.image.SetValue(Image.SourceProperty, new BitmapImage(new Uri("/Images/Bookmark.png", UriKind.Relative)));
                 }
                 else
                 {
@@ -808,7 +809,7 @@ namespace YueFM.Pages
         private void GestureListener_DragStarted(object sender, ManipulationStartedEventArgs e)
         {
             if (this.popup.IsOpen == true)
-                this.floatPopup.FloatOutStoryboard.Begin();       
+                this.floatPopup.FloatOutStoryboard.Begin();
         }
 
         void floatPopup_FavImageTapEventHandler(object sender, EventArgs b)
